@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import SearchBar from './components/SearchBar';
 
 const App = () => {
+  const [data, setData] = useState(null);
+
   return (
-    <div>Hello React</div>
+    <div>
+      <SearchBar />
+    </div>
   );
 };
 
