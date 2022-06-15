@@ -6,7 +6,7 @@ const App = () => {
 
   return (
     <div>
-      <SearchBar />
+      <SearchBar setData={setData}/>
     </div>
   );
 };

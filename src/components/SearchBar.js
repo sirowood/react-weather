@@ -1,22 +1,31 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+const { BASE_URL } = process.env;
 
-const SearchBar = () => {
+const SearchBar = ({ setData }) => {
   const [input, setInput] = useState('');
 
   const handleClick = (event) => {
-    console.log(input);
+    event.preventDefault();
+    axios.get(`${BASE_URL}&q=${input}&aqi=no`)
+      .then(({ data }) => {
+        setData(data);
+      })
+      .catch((error) => {
+        setData({ error: 'No such city'});
+      });
   };
 
   return (
-    <div className='try'>
+    <form onSubmit={handleClick}>
       <input
         type="text"
         value={input}
         placeholder="Search City"
         onChange={(e) => setInput(e.target.value)}
       />
-      <button onClick={handleClick}>Search</button>
-    </div>
+      <button type="submit">Search</button>
+    </form>
   )
 }
 
