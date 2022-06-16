@@ -3,18 +3,17 @@ import styled from 'styled-components';
 
 const ErrorPanel = styled.div`
   position: absolute;
-  top: 540px;
-  left: 49px;
+  left: 5%;
+  bottom: 20%;
 
-  width: 330px;
-  background: rgba(255, 64, 64, 0.5);
+  width: 90%;
+  background: rgba(255, 64, 64, 0.1);
   border-radius: 10px;
-  color: #FFFFFF;
+  color: rgb(255, 64, 64);
   font-size: 24px;
 
   padding: 2px 0px;
   text-align: center;
-
 `;
 
 const Error = ({ error }) => {
