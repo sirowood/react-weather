@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 const Display = styled.div`
   position: absolute;
-  top: 133px;
-  left: 49px;
+  top: 10%;
+  left: 10%;
 
-  width: 330px;
+  width: 80%;
   height: 330px;
   border-radius: 20px;
   background: #DA9D78;
@@ -33,6 +33,7 @@ const City = styled.div`
 
 const Bottom = styled.div`
   width: 100%;
+  max-width: 330px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

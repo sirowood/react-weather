@@ -6,16 +6,17 @@ const { BASE_URL } = process.env;
 
 const Form = styled.form`
   position: absolute;
-  left: 19px;
-  right: 19px;
-  bottom: 29px;
+  left: 5%;
+  bottom: 5%;
 
-  width: 390px;
+  width: 90%;
   height: 48px;
   background: #FDFDFD;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.2s;
   border-radius: 30px;
+  box-sizing: border-box;
+  padding: 0px 5%;
 
   display: flex;
   flex-direction: row;
@@ -30,8 +31,8 @@ const Form = styled.form`
 
 const Input = styled.input`
   height: 100%;
+  width: 80%;
   border: none;
-  margin-left: 25px;
   outline: none;
 
   padding: 0px 2px;
@@ -42,7 +43,6 @@ const Input = styled.input`
 `;
 
 const SearchButton = styled.button`
-  margin-right: 25px;
   border: none;
   background: none;
   padding: 0px;
