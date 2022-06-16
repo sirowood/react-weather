@@ -3,6 +3,7 @@ This is an easy project for showing my skills when applying job
 
 ## Collaborator
 UI/UX: Lilja KoskiVirta(lilja.zhou@gmail.com)
+
 Code: Xuefeng Wu(sirowood@gmail.com)
 
 ## Summary
