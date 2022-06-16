@@ -62,7 +62,7 @@ const Icon = styled.img`
   }
 `;
 
-const SearchBar = ({ setData }) => {
+const SearchBar = ({ setData, setError }) => {
   const [input, setInput] = useState('');
 
   const handleClick = (event) => {
@@ -70,9 +70,15 @@ const SearchBar = ({ setData }) => {
     axios.get(`${BASE_URL}&q=${input}&aqi=no`)
       .then(({ data }) => {
         setData(data);
+        setInput('');
       })
       .catch((error) => {
-        setData({ error: 'No such city'});
+        setError(`Couldn't found '${input}'`);
+        setData(null);
+        setInput('');
+        setTimeout(() => {
+          setError('')
+        }, 5000);
       });
   };
 

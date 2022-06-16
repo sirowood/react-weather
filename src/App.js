@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SearchBar from './components/SearchBar';
+import Error from './components/Error';
 import DisplayPanel from './components/DisplayPanel';
 import styled from 'styled-components';
 
@@ -17,10 +18,13 @@ const MainContainer = styled.div`
 
 const App = () => {
   const [data, setData] = useState(null);
+  const [error, setError] = useState('');
 
   return (
     <MainContainer>
-      <SearchBar setData={setData}/>
+      <DisplayPanel data={data}/>
+      {error && <Error error={error}/>}
+      <SearchBar setData={setData} setError={setError}/>
     </MainContainer>
   );
 };
