@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import mag from '../svgs/magnifer.svg';
-const { BASE_URL } = process.env;
 
 const Form = styled.form`
   position: absolute;
@@ -67,18 +66,20 @@ const SearchBar = ({ setData, setError }) => {
 
   const handleClick = (event) => {
     event.preventDefault();
-    axios.get(`${BASE_URL}&q=${input}&aqi=no`)
+    axios
+      .get(`${BACKEND_URL}/${input}`)
       .then(({ data }) => {
-        setData(data);
-        setInput('');
-      })
-      .catch((error) => {
-        setError(`Couldn't found '${input}'`);
-        setData(null);
-        setInput('');
-        setTimeout(() => {
-          setError('')
-        }, 5000);
+        if (!data.error) {
+          setData(data);
+          setInput('');
+        } else {
+          setError(`Couldn't found '${input}'`);
+          setData(null);
+          setInput('');
+          setTimeout(() => {
+            setError('')
+          }, 5000);
+        }
       });
   };
 
