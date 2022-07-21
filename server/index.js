@@ -9,6 +9,11 @@ app.use(cors());
 // Serve the static files
 app.use(express.static('dist'));
 
+// Health check for deploy purpose
+app.get('/health', async (req, res) => {
+  res.send('ok');
+});
+
 app.get('/:city', async (req, res) => {
   const { city } = req.params;
   await axios
